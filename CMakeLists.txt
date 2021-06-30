@@ -77,7 +77,7 @@ option(ALSOFT_DLOPEN  "Check for the dlopen API for loading optional libs"  ON)
 option(ALSOFT_WERROR  "Treat compile warnings as errors"      OFF)
 
 option(ALSOFT_UTILS "Build utility programs"  ON)
-option(ALSOFT_NO_CONFIG_UTIL "Disable building the alsoft-config utility" OFF)
+option(ALSOFT_NO_CONFIG_UTIL "Disable building the alsoft-config utility" ON)
 
 option(ALSOFT_EXAMPLES  "Build example programs"  ON)
 
@@ -137,6 +137,7 @@ endif()
 
 # When the library is built for static linking, apps should define
 # AL_LIBTYPE_STATIC when including the AL headers.
+set(LIBTYPE STATIC)
 if(NOT LIBTYPE)
     set(LIBTYPE SHARED)
 endif()
